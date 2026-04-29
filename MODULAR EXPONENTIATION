@@ -1,0 +1,22 @@
+class Solution {
+public:
+    long long powMod(long long x, long long n, long long M) {
+        long long res = 1; 
+        
+        x = x % M;
+
+        if (x == 0) return 0; 
+
+        while (n > 0) {
+           
+            if (n % 2 == 1) {
+                res = (res * x) % M;
+            }
+
+           
+            n = n >> 1; 
+            x = (x * x) % M; 
+        }
+        return res;
+    }
+};
